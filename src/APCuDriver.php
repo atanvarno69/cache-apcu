@@ -16,7 +16,7 @@ class APCuDriver implements Driver
     public function get(string $key, $default = null)
     {
         $success = false;
-        $return = apcu_fetch($key);
+        $return = apcu_fetch($key, $success);
         if (!$success) {
             return $default;
         }

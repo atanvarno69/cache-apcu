@@ -11,7 +11,7 @@ The [APCu](http://php.net/manual/en/book.apcu.php) PHP extension is required.
 
 ## Installation
 ```bash
-$ composer require atanvarno/cache-apcu:^0.1.0
+$ composer require atanvarno/cache-apcu:^0.1.1
 ```
 
 ## Basic Usage
