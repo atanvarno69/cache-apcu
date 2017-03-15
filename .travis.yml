@@ -3,8 +3,7 @@ php:
   - 7.0
   - 7.1
 
-services:
-    - memcached
+before_install: echo "extension = apcu.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
 
 before_script:
   - travis_retry composer install --no-interaction --prefer-source
