@@ -4,6 +4,8 @@ php:
   - 7.1
 
 before_script:
+  - pecl config-set preferred_state beta; echo yes | pecl install apcu;
+  - yes '' | pecl install apcu
   - travis_retry composer install --no-interaction --prefer-source
 
 script:
