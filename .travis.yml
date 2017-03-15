@@ -3,10 +3,14 @@ php:
   - 7.0
   - 7.1
 
+services:
+    - memcached
+
 before_script:
-  - pecl config-set preferred_state beta; echo yes | pecl install apcu;
-  - yes '' | pecl install apcu
-  - travis_retry composer install --no-interaction --prefer-source
+  - if [[ $TRAVIS_PHP_VERSION = 7.* ]] ; then pecl config-set preferred_state beta; echo yes | pecl install apcu; fi;
+
+install:
+    - travis_retry composer install --no-interaction --prefer-source
 
 script:
   - mkdir -p build/logs
